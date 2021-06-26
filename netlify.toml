@@ -1,7 +1,6 @@
 [build]
-command = "hugo"
+command = "hugo && npm install && npm run build"
 publish = "public"
-command = "npm install && npm run build"
 functions = "functions"
 [build.environment]
 HUGO_VERSION = "0.83.1"

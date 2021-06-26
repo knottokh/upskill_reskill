@@ -296,6 +296,6 @@ hr {
 </div>
 <script type="text/javascript">
   $(document).ready(function(){
-    $(body).append($("#loginblock").html());
+    $("body").append($("#loginblock"));
   });
 </script>

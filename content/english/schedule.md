@@ -181,6 +181,19 @@ hr {
 }
 </style>
 
+<!-- jQuery Modal -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+<a class="btn" href="#ex2" rel="modal:open">Open Modal</a>
+
+<!-- Modal HTML embedded directly into document -->
+<form action="" class="login_form modal" id="ex2" style="display:none;">
+  <h3>Please login to continue</h3>
+  <p><label>Username:</label><input type="text" /></p>
+  <p><label>Password:</label><input type="password" /></p>
+  <p><input type="submit" value="Login" /></p>
+</form>
 
 ### หลักสูตรการคิดออกแบบ การโค้ชชิ่ง และการจัดชั้นเรียนนวัตกรรม เพื่อสร้างและยกระดับทักษะ   การทำงานของบุคลากรทางการศึกษาสำหรับการเรียนรู้ออนไลน์และออฟไลน์
 

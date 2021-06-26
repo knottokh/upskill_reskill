@@ -252,6 +252,14 @@ hr {
 
 <style type="text/css" media="screen">
     /* Example 2 (login form) */
+    .login-block{
+      position: fixed;
+      background: #fff;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
     .login_form.modal {
       border-radius: 0;
       line-height: 18px;
@@ -287,15 +295,50 @@ hr {
 
 <div class="login-block" id="loginblock">
 <!-- Modal HTML embedded directly into document -->
-<form action="" class="login_form modal" id="ex2" style="display:none;">
+<div class="login_form">
   <h3>Please login to continue</h3>
-  <p><label>Username:</label><input type="text" /></p>
-  <p><label>Password:</label><input type="password" /></p>
-  <p><input type="submit" value="Login" /></p>
-</form>
+  <p><label>Username:</label><input id="idusernamelogin" type="text" /></p>
+  <p><label>Password:</label><input id="idpasswordlogin" type="password" /></p>
+  <p><input id="idbuttonlogin" type="button" value="Login" /></p>
+</div>
+<p id="iderrorlogin"></p>
 </div>
 <script type="text/javascript">
   $(document).ready(function(){
     $("body").append($("#loginblock"));
+    $.ajax({
+        type: 'GET',
+        url: 'https://distracted-dijkstra-b06ea9.netlify.app/api/profile',
+        beforeSend: function(xhr) {
+          if (localStorage.token) {
+            xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.token);
+          }
+        },
+        success: function(data) {
+            $("#loginblock").hide();
+        },
+        error: function() {
+          $("#iderrorlogin").text("Sorry, you are not logged in.");
+        }
+      });
+    $("#idbuttonlogin").click(function(){
+      $.ajax({
+        type: "POST",
+        url: "https://distracted-dijkstra-b06ea9.netlify.app/login",
+        data: {
+          username: "john.doe",
+          password: "foobar"
+        },
+        success: function(data) {
+          localStorage.token = data.token;
+          //alert('Got a token from the server! Token: ' + data.token);
+          $("#loginblock").hide();
+        },
+        error: function() {
+          $("#iderrorlogin").text("Login Failed");
+        }
+      });
+      return false;
+    });
   });
 </script>

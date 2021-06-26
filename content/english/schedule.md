@@ -181,6 +181,7 @@ hr {
 }
 </style>
 
+
 ### หลักสูตรการคิดออกแบบ การโค้ชชิ่ง และการจัดชั้นเรียนนวัตกรรม เพื่อสร้างและยกระดับทักษะ   การทำงานของบุคลากรทางการศึกษาสำหรับการเรียนรู้ออนไลน์และออฟไลน์
 
 วันอาทิตย์ที่ 4 กรกฎาคม พ.ศ. 2564  
@@ -248,6 +249,7 @@ hr {
   
 </div>
 
+
 <style type="text/css" media="screen">
     /* Example 2 (login form) */
     .login_form.modal {
@@ -279,9 +281,16 @@ hr {
       border: 1px solid #ddd;
       width: 200px;
     }
-</style>
+  </style>
+<!-- Remember to include jQuery :) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 
-<div class="login-block">
+<!-- jQuery Modal -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+<a class="btn" href="#ex2" rel="modal:open">Open Modal</a>
+
 <!-- Modal HTML embedded directly into document -->
 <form action="" class="login_form modal" id="ex2" style="display:none;">
   <h3>Please login to continue</h3>
@@ -289,11 +298,3 @@ hr {
   <p><label>Password:</label><input type="password" /></p>
   <p><input type="submit" value="Login" /></p>
 </form>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-<script type="text/javascript">
-  $(document).ready(function(){
-    alert("555");
-  });
-</script>

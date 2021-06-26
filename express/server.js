@@ -6,17 +6,27 @@ const app = express();
 const bodyParser = require('body-parser');
 
 const router = express.Router();
-router.get('/api', (req, res) => {
+
+router.get('/', (req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/html' });
   res.write('<h1>Hello from Express.js!</h1>');
   res.end();
 });
-router.get('/another', (req, res) => res.json({ route: req.originalUrl }));
-//router.post('/', (req, res) => res.json({ postBody: req.body }));
+router.get('/api1', (req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/html' });
+  res.write('<h1>Hello API 1 from Express.js!</h1>');
+  res.end();
+});
+router.get('/api2', (req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/html' });
+  res.write('<h1>Hello API 2 from Express.js!</h1>');
+  res.end();
+});
 
 app.use(bodyParser.json());
-app.use('/.netlify/functions/server', router);  // path must route to lambda
-app.use('/api', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
+
+app.use("/api", router);
+
 
 module.exports = app;
 module.exports.handler = serverless(app);

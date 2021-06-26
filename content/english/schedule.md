@@ -289,7 +289,7 @@ hr {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 
-<a class="btn" href="#ex2" rel="modal:open">Open Modal</a>
+<!-- <a class="btn" href="#ex2" rel="modal:open">Open Modal</a> -->
 
 <!-- Modal HTML embedded directly into document -->
 <form action="" class="login_form modal" id="ex2" style="display:none;">

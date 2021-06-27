@@ -316,6 +316,10 @@ hr {
         },
         success: function(data) {
             $("#loginblock").hide();
+            $("#navigation ul.nav").append("<li id='idlogout'><a href='javascript:void(0)'>Logout</a></li>");
+             $("#idlogout").click(function() {
+              localStorage.clear();
+            });
         },
         error: function() {
           $("#iderrorlogin").text("Sorry, you are not logged in.");

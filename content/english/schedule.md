@@ -337,6 +337,10 @@ hr {
           localStorage.token = data.token;
           //alert('Got a token from the server! Token: ' + data.token);
           $("#loginblock").hide();
+          $("#navigation ul.nav").append("<li id='idlogout'><a href='javascript:void(0)'>Logout</a></li>");
+             $("#idlogout").click(function() {
+              localStorage.clear();
+            });
         },
         error: function() {
           $("#iderrorlogin").text("Login Failed");

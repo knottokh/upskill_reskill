@@ -330,12 +330,15 @@ hr {
         }
       });
     $("#idbuttonlogin").click(function(){
+      $("#iderrorlogin").text("");
+      console.log("username : ", $("#idusernamelogin").val());
+      console.log("password : ", $("#idpasswordlogin").val());
       $.ajax({
         type: "POST",
         url: "/.netlify/functions/server/login",
         data: {
-          username: $("#idusernamelogin").text(),
-          password: $("#idpasswordlogin").text()
+          username: $("#idusernamelogin").val(),
+          password: $("#idpasswordlogin").val()
         },
         success: function(data) {
           localStorage.token = data.token;

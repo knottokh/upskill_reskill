@@ -308,7 +308,7 @@ hr {
     $("body").append($("#loginblock"));
     $.ajax({
         type: 'GET',
-        url: 'https://festive-minsky-f5f8c2.netlify.app/api/profile',
+        url: 'https://festive-minsky-f5f8c2.netlify.app/.netlify/functions/server/api/profile',
         beforeSend: function(xhr) {
           if (localStorage.token) {
             xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.token);
@@ -324,7 +324,7 @@ hr {
     $("#idbuttonlogin").click(function(){
       $.ajax({
         type: "POST",
-        url: "https://distracted-dijkstra-b06ea9.netlify.app/login",
+        url: "https://distracted-dijkstra-b06ea9.netlify.app/.netlify/functions/server/login",
         data: {
           username: "john.doe",
           password: "foobar"

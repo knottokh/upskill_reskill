@@ -334,8 +334,8 @@ hr {
         type: "POST",
         url: "/.netlify/functions/server/login",
         data: {
-          username: "john.doe",
-          password: "foobar"
+          username: $("#idusernamelogin").text(),
+          password: $("#idpasswordlogin").text()
         },
         success: function(data) {
           localStorage.token = data.token;

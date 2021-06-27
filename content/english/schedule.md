@@ -248,4 +248,4 @@ hr {
   </div>
   
 </div>
-{{content}}
+{{< auth >}}

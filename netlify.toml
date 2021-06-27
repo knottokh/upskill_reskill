@@ -1,5 +1,5 @@
 [build]
-command = "hugo && npm install && npm run build"
+command = "npm install && npm run build && hugo"
 publish = "public"
 functions = "functions"
 [build.environment]

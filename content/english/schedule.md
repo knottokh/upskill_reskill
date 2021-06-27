@@ -318,7 +318,11 @@ hr {
             $("#loginblock").hide();
             $("#navigation ul.nav").append("<li id='idlogout'><a href='javascript:void(0)'>Logout</a></li>");
              $("#idlogout").click(function() {
-              localStorage.clear();
+               var confirmmsg = confirm("Are you sure to Logout?");
+               if(confirmmsg){
+                localStorage.clear();
+                window.location.href="/";
+              }
             });
         },
         error: function() {
@@ -339,7 +343,11 @@ hr {
           $("#loginblock").hide();
           $("#navigation ul.nav").append("<li id='idlogout'><a href='javascript:void(0)'>Logout</a></li>");
              $("#idlogout").click(function() {
-              localStorage.clear();
+               var confirmmsg = confirm("Are you sure to Logout?");
+               if(confirmmsg){
+                localStorage.clear();
+                window.location.href="/";
+              }
             });
         },
         error: function() {

@@ -19,6 +19,7 @@
     .login_form .input{
       padding: 5px;
       border: 1px black solid;
+      background: #f6f8ff;
     }
 
     .login_form {
@@ -38,7 +39,7 @@
     }
 
     .login_form p { padding: 15px 30px 10px; border-bottom: 1px solid #ddd; margin: 0;
-      background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #eee),color-stop(1, #fff));
+      /* background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #eee),color-stop(1, #fff)); */
       overflow: hidden;
     }
     .login_form p:last-child { border: none; }
@@ -133,7 +134,8 @@
     }
 
     #iderrorlogin{
-      color: #FF9AA2;
+      color: #e12433;
+      font-size: 14px;
     }
 
   </style>
@@ -151,9 +153,8 @@
     <p><label>Password:</label><input id="idpasswordlogin" type="password" /></p>
     <p>
       <input id="idbuttonlogin" type="button" value="Login" />
-      <br/>
-      <span id="iderrorlogin"></span>
     </p>
+    <p id="iderrorlogin"></p>
   </div>
 </div>
 </div>

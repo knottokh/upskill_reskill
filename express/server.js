@@ -7,10 +7,11 @@ const cors = require('cors');
 const path = require('path');
 var app = express();
 var jwt = require('jsonwebtoken');  //https://npmjs.org/package/node-jsonwebtoken
-var expressJwt = require('express-jwt'); //https://npmjs.org/package/express-jwt
+//var expressJwt = require('express-jwt'); //https://npmjs.org/package/express-jwt
 const router = express.Router();
+const checkAuth = require('./check-auth');
 
-var secret = 'This is the secret for signing tokens';
+var secret = 'XYZLQ3M0RKe6Bz6tYtU';
 
 
 
@@ -41,20 +42,23 @@ router.post('/login', function(req, res) {
   }
   console.log('successful login');
   // We are sending the profile inside the token
-  var token = jwt.sign({ firstname: 'John', lastname: 'Doe'}, secret, { expiresIn: 5 * 60 });
+  var token = jwt.sign({ firstname: 'John', lastname: 'Doe'}, secret, { expiresIn: "1d" });
   res.json({ token: token });
 });
 
 
-router.get('/api/profile', function (req, res) {
-  console.log('user ' + req.user.firstname + ' is calling /api/profile');
+router.get('/api/profile', checkAuth, function (req, res) {
+  // console.log('user ' + req.user.firstname + ' is calling /api/profile');
+  // res.json({
+  //   name: req.user.firstname
+  // });
   res.json({
-    name: req.user.firstname
-  });
+    status: "Auth Success"
+  })
 });
 
 // We are going to protect /api routes with JWT
-app.use('/api', expressJwt({secret: secret}));
+//app.use('/api', expressJwt({secret: secret}));
 
 app.use(function(err, req, res, next){
   if (err.constructor.name === 'UnauthorizedError') {
@@ -72,29 +76,3 @@ app.use('/.netlify/functions/server', router);  // path must route to lambda
 
 module.exports = app;
 module.exports.handler = serverless(app);
-
-// 'use strict';
-// const express = require('express');
-// const serverless = require('serverless-http');
-// const app = express();
-// const bodyParser = require('body-parser');
-
-// const router = express.Router();
-// router.get('/', (req, res) => {
-//   res.writeHead(200, { 'Content-Type': 'text/html' });
-//   res.write('<h1>Hello from Express.js!</h1>');
-//   res.end();
-// });
-// router.get('/another', (req, res) => {
-//   res.writeHead(200, { 'Content-Type': 'text/html' });
-//   res.write('<h1>Hello Another from Express.js!</h1>');
-//   res.end();
-// });
-// router.post('/', (req, res) => res.json({ postBody: req.body }));
-
-// app.use(bodyParser.json());
-// app.use('/.netlify/functions/server', router);  // path must route to lambda
-// //app.use('/', router);  
-
-// module.exports = app;
-// module.exports.handler = serverless(app);

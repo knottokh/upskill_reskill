@@ -10,7 +10,7 @@ var jwt = require('jsonwebtoken');  //https://npmjs.org/package/node-jsonwebtoke
 //var expressJwt = require('express-jwt'); //https://npmjs.org/package/express-jwt
 const router = express.Router();
 const checkAuth = require('./check-auth');
-const UserModel = require("./model/user");
+const UserModel = require("./user");
 
 var secret = 'XYZLQ3M0RKe6Bz6tYtU';
 var mogoUrl = 'mongodb+srv://dbTedstat:YJKFeWzy3NrmyTw2@tedstat-wvyih.mongodb.net/test?retryWrites=true';

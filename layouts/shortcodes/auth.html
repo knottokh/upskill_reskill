@@ -138,6 +138,18 @@
       font-size: 14px;
     }
 
+    .login_form .header{
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .login_form .header a{
+      color: #fff;
+    }
+    .login_form .header a:hover{
+      text-decoration: underline;
+    }
+
   </style>
 <!-- Remember to include jQuery :) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
@@ -147,7 +159,10 @@
 <div  id="ldsspinne" class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 
 <div class="login_form" style="display:none">
-  <h3>Please login to continue</h3>
+  <h3 class="header">
+    <span>Please login to continue</span>
+    <a href="/">Back to Home</a>
+  </h3>
   <div class="input">
     <p><label>Username:</label><input id="idusernamelogin" type="text" /></p>
     <p><label>Password:</label><input id="idpasswordlogin" type="password" /></p>

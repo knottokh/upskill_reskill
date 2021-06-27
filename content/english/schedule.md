@@ -428,13 +428,15 @@ hr {
         error: function() {
           $("#ldsspinne").hide();
           $(".login_form").removeAttr('style');
-          $("#iderrorlogin").text("Sorry, you are not logged in.");
+          //$("#iderrorlogin").text("Sorry, you are not logged in.");
         }
       });
     $("#idbuttonlogin").click(function(){
       $("#iderrorlogin").text("");
-      console.log("username : ", $("#idusernamelogin").val());
-      console.log("password : ", $("#idpasswordlogin").val());
+      // console.log("username : ", $("#idusernamelogin").val());
+      // console.log("password : ", $("#idpasswordlogin").val());
+      $("#ldsspinne").show();
+      $(".login_form").hide();
       $.ajax({
         type: "POST",
         url: "/.netlify/functions/server/login",
@@ -456,6 +458,8 @@ hr {
             });
         },
         error: function() {
+          $("#ldsspinne").hide();
+          $(".login_form").show();
           $("#iderrorlogin").text("Login Failed");
         }
       });

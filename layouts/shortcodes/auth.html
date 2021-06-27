@@ -37,7 +37,7 @@
       background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #1e3d47),color-stop(1, #2e5764));
     }
 
-    .login_form p { padding: 20px 30px; border-bottom: 1px solid #ddd; margin: 0;
+    .login_form p { padding: 15px 30px 10px; border-bottom: 1px solid #ddd; margin: 0;
       background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #eee),color-stop(1, #fff));
       overflow: hidden;
     }
@@ -49,6 +49,7 @@
       padding: 3px;
       border: 1px solid #ddd;
       width: 200px;
+      height: 23px!important;
     }
 
     .lds-spinner {
@@ -148,8 +149,11 @@
   <div class="input">
     <p><label>Username:</label><input id="idusernamelogin" type="text" /></p>
     <p><label>Password:</label><input id="idpasswordlogin" type="password" /></p>
-    <p><input id="idbuttonlogin" type="button" value="Login" /></p>
-    <p id="iderrorlogin"></p>
+    <p>
+      <input id="idbuttonlogin" type="button" value="Login" />
+      <br/>
+      <span id="iderrorlogin"></span>
+    </p>
   </div>
 </div>
 </div>

@@ -249,4 +249,4 @@ hr {
   
 </div>
 
-{{% content "auth.md" %}}
+{{% content "content/auth.md" %}}

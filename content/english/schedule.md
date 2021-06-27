@@ -260,6 +260,17 @@ hr {
       top: 0;
       left: 0;
     }
+
+    .login_form{
+      width: 450px;
+      margin: 0 auto;
+    }
+
+    .login_form .input{
+      padding: 5px;
+      border: 1px black solid;
+    }
+
     .login_form.modal {
       border-radius: 0;
       line-height: 18px;
@@ -292,10 +303,11 @@ hr {
 
     .lds-spinner {
       color: official;
-      display: inline-block;
+      display: block;
       position: relative;
       width: 80px;
       height: 80px;
+      margin: 0 auto;
     }
     .lds-spinner div {
       transform-origin: 40px 40px;
@@ -310,7 +322,7 @@ hr {
       width: 6px;
       height: 18px;
       border-radius: 20%;
-      background: #fff;
+      background: #BAE1FF;
     }
     .lds-spinner div:nth-child(1) {
       transform: rotate(0deg);
@@ -369,6 +381,10 @@ hr {
       }
     }
 
+    #iderrorlogin{
+      color: #FF9AA2;
+    }
+
   </style>
 <!-- Remember to include jQuery :) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
@@ -379,11 +395,13 @@ hr {
 
 <div class="login_form">
   <h3>Please login to continue</h3>
-  <p><label>Username:</label><input id="idusernamelogin" type="text" /></p>
-  <p><label>Password:</label><input id="idpasswordlogin" type="password" /></p>
-  <p><input id="idbuttonlogin" type="button" value="Login" /></p>
+  <div class="input">
+    <p><label>Username:</label><input id="idusernamelogin" type="text" /></p>
+    <p><label>Password:</label><input id="idpasswordlogin" type="password" /></p>
+    <p><input id="idbuttonlogin" type="button" value="Login" /></p>
+    <p id="iderrorlogin"></p>
+  </div>
 </div>
-<p id="iderrorlogin"></p>
 </div>
 <script type="text/javascript">
   $(document).ready(function(){

@@ -405,9 +405,7 @@ hr {
 </div>
 <script type="text/javascript">
   $(document).ready(function(){
-    $("#ldsspinne").hide();
     $("body").append($("#loginblock"));
-    $(".login_form").removeAttr('style');
     $.ajax({
         type: 'GET',
         url: '/.netlify/functions/server/api/profile',
@@ -428,6 +426,8 @@ hr {
             });
         },
         error: function() {
+          $("#ldsspinne").hide();
+          $(".login_form").removeAttr('style');
           $("#iderrorlogin").text("Sorry, you are not logged in.");
         }
       });

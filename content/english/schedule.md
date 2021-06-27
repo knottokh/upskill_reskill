@@ -392,8 +392,8 @@ hr {
 <div class="login-block" id="loginblock">
 <!-- Modal HTML embedded directly into document -->
 <div  id="ldsspinne" class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-<div  style="display:none">
-<div class="login_form">
+
+<div class="login_form" style="display:none">
   <h3>Please login to continue</h3>
   <div class="input">
     <p><label>Username:</label><input id="idusernamelogin" type="text" /></p>
@@ -403,11 +403,11 @@ hr {
   </div>
 </div>
 </div>
-</div>
 <script type="text/javascript">
   $(document).ready(function(){
     $("#ldsspinne").hide();
     $("body").append($("#loginblock"));
+    $(".login_form").removeAttr('style');
     $.ajax({
         type: 'GET',
         url: '/.netlify/functions/server/api/profile',

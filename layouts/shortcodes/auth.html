@@ -1,188 +1,233 @@
-
-
 <style type="text/css" media="screen">
-    /* Example 2 (login form) */
-    .login-block{
-      position: fixed;
-      background: #eee;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
+  /* Example 2 (login form) */
+  .login-block {
+    position: fixed;
+    background: #eee;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .lds-spinner {
+    color: official;
+    display: block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+  }
+
+  .lds-spinner div {
+    transform-origin: 40px 40px;
+    animation: lds-spinner 1.2s linear infinite;
+  }
+
+  .lds-spinner div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 37px;
+    width: 6px;
+    height: 18px;
+    border-radius: 20%;
+    background: #BAE1FF;
+  }
+
+  .lds-spinner div:nth-child(1) {
+    transform: rotate(0deg);
+    animation-delay: -1.1s;
+  }
+
+  .lds-spinner div:nth-child(2) {
+    transform: rotate(30deg);
+    animation-delay: -1s;
+  }
+
+  .lds-spinner div:nth-child(3) {
+    transform: rotate(60deg);
+    animation-delay: -0.9s;
+  }
+
+  .lds-spinner div:nth-child(4) {
+    transform: rotate(90deg);
+    animation-delay: -0.8s;
+  }
+
+  .lds-spinner div:nth-child(5) {
+    transform: rotate(120deg);
+    animation-delay: -0.7s;
+  }
+
+  .lds-spinner div:nth-child(6) {
+    transform: rotate(150deg);
+    animation-delay: -0.6s;
+  }
+
+  .lds-spinner div:nth-child(7) {
+    transform: rotate(180deg);
+    animation-delay: -0.5s;
+  }
+
+  .lds-spinner div:nth-child(8) {
+    transform: rotate(210deg);
+    animation-delay: -0.4s;
+  }
+
+  .lds-spinner div:nth-child(9) {
+    transform: rotate(240deg);
+    animation-delay: -0.3s;
+  }
+
+  .lds-spinner div:nth-child(10) {
+    transform: rotate(270deg);
+    animation-delay: -0.2s;
+  }
+
+  .lds-spinner div:nth-child(11) {
+    transform: rotate(300deg);
+    animation-delay: -0.1s;
+  }
+
+  .lds-spinner div:nth-child(12) {
+    transform: rotate(330deg);
+    animation-delay: 0s;
+  }
+
+  @keyframes lds-spinner {
+    0% {
+      opacity: 1;
     }
 
-    .lds-spinner {
-      color: official;
-      display: block;
-      position: relative;
-      width: 80px;
-      height: 80px;
-      margin: 0 auto;
+    100% {
+      opacity: 0;
     }
-    .lds-spinner div {
-      transform-origin: 40px 40px;
-      animation: lds-spinner 1.2s linear infinite;
-    }
-    .lds-spinner div:after {
-      content: " ";
-      display: block;
-      position: absolute;
-      top: 3px;
-      left: 37px;
-      width: 6px;
-      height: 18px;
-      border-radius: 20%;
-      background: #BAE1FF;
-    }
-    .lds-spinner div:nth-child(1) {
-      transform: rotate(0deg);
-      animation-delay: -1.1s;
-    }
-    .lds-spinner div:nth-child(2) {
-      transform: rotate(30deg);
-      animation-delay: -1s;
-    }
-    .lds-spinner div:nth-child(3) {
-      transform: rotate(60deg);
-      animation-delay: -0.9s;
-    }
-    .lds-spinner div:nth-child(4) {
-      transform: rotate(90deg);
-      animation-delay: -0.8s;
-    }
-    .lds-spinner div:nth-child(5) {
-      transform: rotate(120deg);
-      animation-delay: -0.7s;
-    }
-    .lds-spinner div:nth-child(6) {
-      transform: rotate(150deg);
-      animation-delay: -0.6s;
-    }
-    .lds-spinner div:nth-child(7) {
-      transform: rotate(180deg);
-      animation-delay: -0.5s;
-    }
-    .lds-spinner div:nth-child(8) {
-      transform: rotate(210deg);
-      animation-delay: -0.4s;
-    }
-    .lds-spinner div:nth-child(9) {
-      transform: rotate(240deg);
-      animation-delay: -0.3s;
-    }
-    .lds-spinner div:nth-child(10) {
-      transform: rotate(270deg);
-      animation-delay: -0.2s;
-    }
-    .lds-spinner div:nth-child(11) {
-      transform: rotate(300deg);
-      animation-delay: -0.1s;
-    }
-    .lds-spinner div:nth-child(12) {
-      transform: rotate(330deg);
-      animation-delay: 0s;
-    }
-    @keyframes lds-spinner {
-      0% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-      }
-    }
+  }
 
-    #iderrorlogin{
-      color: #e12433;
-      font-size: 14px;
-    }
+  #iderrorlogin {
+    color: #e12433;
+    font-size: 14px;
+  }
 
-    .login_form .header{
-      display: flex;
-      justify-content: space-between;
-    }
+  .login_form .header {
+    display: flex;
+    justify-content: space-between;
+  }
 
-    .login_form .header a{
-      color: #fff;
-    }
-    .login_form .header a:hover{
-      text-decoration: underline;
-    }
+  .login_form .header a {
+    color: #fff;
+  }
 
-    .wrapper {
-      padding-top: 80px;
-    }
+  .login_form .header a:hover {
+    text-decoration: underline;
+  }
 
-    .form-signin {
-      max-width: 380px;
-      padding: 15px 35px 45px;
-      margin: 0 auto;
-      background-color: #fff;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-    }
-    .form-signin .form-signin-heading,
-    .form-signin .checkbox {
-      margin-bottom: 30px;
-    }
-    .form-signin .checkbox {
-      font-weight: normal;
-    }
-    .form-signin .form-control {
-      position: relative;
-      font-size: 16px;
-      height: auto;
-      padding: 10px;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-    }
-    .form-signin .form-control:focus {
-      z-index: 2;
-    }
-    .form-signin input[type=text] {
-      margin-bottom: -1px;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-    .form-signin input[type=password] {
-      margin-bottom: 20px;
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-    }
+  .wrapper {
+    padding-top: 80px;
+  }
 
-    .text-right{
-      text-align: right;
-    }
+  .form-signin {
+    max-width: 380px;
+    padding: 15px 35px 45px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
 
-    .form-signin *{
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    }
-    
-    .backhome a:hover{
-      text-decoration: underline;
-    }
+  .form-signin .form-signin-heading,
+  .form-signin .checkbox {
+    margin-bottom: 30px;
+  }
 
-  </style>
+  .form-signin .checkbox {
+    font-weight: normal;
+  }
+
+  .form-signin .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+
+  .form-signin input[type=text] {
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .form-signin input[type=password] {
+    margin-bottom: 20px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .btn-custom {
+    color: #fff;
+    background-color: #645F78;
+    border-color: #42404e;
+  }
+
+  .btn-custom:hover {
+    background-color: #4d495d;
+  }
+
+  .text-right {
+    text-align: right;
+  }
+
+  .form-signin * {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+  .backhome a:hover {
+    text-decoration: underline;
+  }
+</style>
 <!-- Remember to include jQuery :) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 
 <div class="login-block wrapper" id="loginblock">
-<!-- Modal HTML embedded directly into document -->
-<div  id="ldsspinne" class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+  <!-- Modal HTML embedded directly into document -->
+  <div id="ldsspinne" class="lds-spinner">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
 
-<div class="login_form form-signin" style="display:none">       
-  <h2 class="form-signin-heading">Please login</h2>
-  <input type="text" class="form-control" id="idusernamelogin" name="username" placeholder="Username" required="" autofocus="" />
-  <input type="password" class="form-control" id="idpasswordlogin" name="password" placeholder="Password" required=""/>      
+  <div class="login_form form-signin" style="display:none">
+    <h2 class="form-signin-heading">Please login</h2>
+    <input type="text" class="form-control" id="idusernamelogin" name="username" placeholder="Username" required=""
+      autofocus="" />
+    <input type="password" class="form-control" id="idpasswordlogin" name="password" placeholder="Password"
+      required="" />
     <!-- <label class="checkbox">
       <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
     </label> -->
-  <button id="idbuttonlogin" class="btn btn-lg btn-primary btn-block" type="button">Login</button>   
-  <p id="iderrorlogin"></p>
-  <div class="text-right backhome">
-    <a href="/">Back to Home</a>
+    <button id="idbuttonlogin" class="btn btn-lg btn-custom btn-block" type="button">Login</button>
+    <p id="iderrorlogin"></p>
+    <div class="text-right backhome">
+      <a href="/">Back to Home</a>
+    </div>
   </div>
-</div>
-<!-- <div class="login_form" style="display:none">
+  <!-- <div class="login_form" style="display:none">
   <h3 class="header">
     <span>Please login to continue</span>
     <a href="/">Back to Home</a>
@@ -198,34 +243,34 @@
 </div> -->
 </div>
 <script type="text/javascript">
-  $(document).ready(function(){
+  $(document).ready(function () {
     $("body").append($("#loginblock"));
     $.ajax({
-        type: 'GET',
-        url: '/.netlify/functions/server/api/profile',
-        beforeSend: function(xhr) {
-          if (localStorage.token) {
-            xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.token);
-          }
-        },
-        success: function(data) {
-            $("#loginblock").hide();
-            $("#navigation ul.nav").append("<li id='idlogout'><a href='javascript:void(0)'>Logout</a></li>");
-             $("#idlogout").click(function() {
-               var confirmmsg = confirm("Are you sure to Logout?");
-               if(confirmmsg){
-                localStorage.clear();
-                window.location.href="/";
-              }
-            });
-        },
-        error: function() {
-          $("#ldsspinne").hide();
-          $(".login_form").removeAttr('style');
-          //$("#iderrorlogin").text("Sorry, you are not logged in.");
+      type: 'GET',
+      url: '/.netlify/functions/server/api/profile',
+      beforeSend: function (xhr) {
+        if (localStorage.token) {
+          xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.token);
         }
-      });
-    $("#idbuttonlogin").click(function(){
+      },
+      success: function (data) {
+        $("#loginblock").hide();
+        $("#navigation ul.nav").append("<li id='idlogout'><a href='javascript:void(0)'>Logout</a></li>");
+        $("#idlogout").click(function () {
+          var confirmmsg = confirm("Are you sure to Logout?");
+          if (confirmmsg) {
+            localStorage.clear();
+            window.location.href = "/";
+          }
+        });
+      },
+      error: function () {
+        $("#ldsspinne").hide();
+        $(".login_form").removeAttr('style');
+        //$("#iderrorlogin").text("Sorry, you are not logged in.");
+      }
+    });
+    $("#idbuttonlogin").click(function () {
       $("#iderrorlogin").text("");
       // console.log("username : ", $("#idusernamelogin").val());
       // console.log("password : ", $("#idpasswordlogin").val());
@@ -238,20 +283,20 @@
           username: $("#idusernamelogin").val(),
           password: $("#idpasswordlogin").val()
         },
-        success: function(data) {
+        success: function (data) {
           localStorage.token = data.token;
           //alert('Got a token from the server! Token: ' + data.token);
           $("#loginblock").hide();
           $("#navigation ul.nav").append("<li id='idlogout'><a href='javascript:void(0)'>Logout</a></li>");
-             $("#idlogout").click(function() {
-               var confirmmsg = confirm("Are you sure to Logout?");
-               if(confirmmsg){
-                localStorage.clear();
-                window.location.href="/";
-              }
-            });
+          $("#idlogout").click(function () {
+            var confirmmsg = confirm("Are you sure to Logout?");
+            if (confirmmsg) {
+              localStorage.clear();
+              window.location.href = "/";
+            }
+          });
         },
-        error: function() {
+        error: function () {
           $("#ldsspinne").hide();
           $(".login_form").show();
           $("#iderrorlogin").text("Login Failed");
